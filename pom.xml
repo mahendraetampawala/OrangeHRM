@@ -3,4 +3,132 @@
   <groupId>OrangeHRM</groupId>
   <artifactId>OrangeHRM</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  
+  <dependencies>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.10.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.18.1</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.16.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>7.15.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>7.15.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>5.8.1</version>
+		</dependency>
+
+
+	</dependencies>
+
+
+	<!--  /////////////////////////////////////////////////////////////////////////                       -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+					<includes>
+						<exclude>**/*Runner.java</exclude>
+					</includes>
+
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>2.0.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>OrangeHRM</projectName>
+							<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
+							<cucumberOutput>${project.build.directory}/cucumber-json.json</cucumberOutput>
+							<enableFlashCharts>false</enableFlashCharts>
+							<skippedFails>false</skippedFails>
+							<buildNumber>11212019</buildNumber>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>tech.grasshopper</groupId>
+				<artifactId>cucumber-pdf-plugin</artifactId>
+				<version>1.4.4</version>
+				<executions>
+					<execution>
+						<id>report</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>pdfreport</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<cucumberJsonReportDirectory>${project.build.directory}
+					</cucumberJsonReportDirectory>
+					<cucumberPdfReportDirectory>pdf-report</cucumberPdfReportDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+  
+  
+  
+  
 </project>
