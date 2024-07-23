@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class WebDriverHelper {
 	
-	 static WebDriver driver;
+	static WebDriver driver;
 	static WebDriverHelper helper;
 	
 	public static WebDriverHelper getWebDriverHelper() {
