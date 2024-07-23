@@ -1,55 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-23T14:40:54 IST" name="Default suite" finished-at="2024-07-23T14:40:55 IST" duration-ms="544">
+  <suite started-at="2024-07-24T00:08:19 IST" name="Default suite" finished-at="2024-07-24T00:08:35 IST" duration-ms="16071">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.Runner@dd05255]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.Runner@1ce24091]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-07-23T14:40:54 IST" name="Default test" finished-at="2024-07-23T14:40:55 IST" duration-ms="544">
+    <test started-at="2024-07-24T00:08:19 IST" name="Default test" finished-at="2024-07-24T00:08:35 IST" duration-ms="16071">
       <class name="Runner.Runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.Runner@dd05255]" started-at="2024-07-23T14:40:54 IST" name="setUpClass" finished-at="2024-07-23T14:40:55 IST" duration-ms="202" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.Runner@1ce24091]" started-at="2024-07-24T00:08:19 IST" name="setUpClass" finished-at="2024-07-24T00:08:19 IST" duration-ms="404" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@a486d78]]>
+                <![CDATA[org.testng.TestRunner@25c53f74]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.Runner@dd05255]" started-at="2024-07-23T14:40:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-23T14:40:55 IST" duration-ms="72" status="FAIL">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Runner.Runner@1ce24091]" started-at="2024-07-24T00:08:19 IST" name="setup" finished-at="2024-07-24T00:08:19 IST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.Runner@1ce24091]" started-at="2024-07-24T00:08:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-24T00:08:34 IST" duration-ms="15202" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Click on login button with empty username and password fields"]]>
+                <![CDATA["Verify the login funtionality with empty fields of username and password"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify that the customer could able to login and logout from the OrangeHRM application as an existing user"]]>
+                <![CDATA["Feature to test the login and logout functionality as an existing user"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "Utility.WebDriverHelper.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "Utility.WebDriverHelper.driver" is null
-at Utility.WebDriverHelper.getURL(WebDriverHelper.java:43)
-at StepDefinitions.LoginLogoutStepDefinitions.Open_the_URL_as(LoginLogoutStepDefinitions.java:22)
-at ✽.Open the URL as "url_OrangeHRM"(file:///D:/Automation/LearnJava/OrangeHRM/src/test/resources/Features/login.feature:7)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.Runner@dd05255]" started-at="2024-07-23T14:40:55 IST" name="tearDownClass" finished-at="2024-07-23T14:40:55 IST" duration-ms="227" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.Runner@1ce24091]" started-at="2024-07-24T00:08:34 IST" name="tearDownClass" finished-at="2024-07-24T00:08:35 IST" duration-ms="404" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

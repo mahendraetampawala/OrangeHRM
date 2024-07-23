@@ -1,9 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>OrangeHRM</groupId>
-  <artifactId>OrangeHRM</artifactId>
+  <groupId>TestOrangeHRM</groupId>
+  <artifactId>TestOrangeHRM</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
   
   <dependencies>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -94,7 +93,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>OrangeHRM</projectName>
+							<projectName>Transmedia</projectName>
 							<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
 							<cucumberOutput>${project.build.directory}/cucumber-json.json</cucumberOutput>
 							<enableFlashCharts>false</enableFlashCharts>
@@ -126,9 +125,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-  
-  
-  
-  
 </project>

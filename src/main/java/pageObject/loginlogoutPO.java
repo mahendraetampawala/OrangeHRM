@@ -1,28 +1,31 @@
 /**
  * 
  */
-package pageObject;
+package PageObject;
 
-import pageFactory.LoginFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import PageFactory.LoginLogoutFactory;
+import Utility.WebDriverHelper;
 
 /**
  * @author mahen
  *
  */
-public class loginlogoutPO {
-	
-	public static loginlogoutPO LoginLogout;
-	public static loginlogoutPO getLoginLogoutPO() {
-		if(LoginLogout==null) {
-			LoginLogout=new loginlogoutPO();
+public class LoginLogoutPO {
+
+	public static LoginLogoutPO NewLoginLogoutpage;
+	public static LoginLogoutPO getnnewLoginPO() {
+		if(NewLoginLogoutpage==null) {
+			NewLoginLogoutpage=new LoginLogoutPO();
 		}
-		return LoginLogout;
+		return NewLoginLogoutpage;
 	}
 	
 	public void clickonLoginButton() {
-		LoginFactory.pf.clickOnLoginBtn.click();
+		LoginLogoutFactory.pf.loginbutton.click();
 	}
 	
-	
-
 }

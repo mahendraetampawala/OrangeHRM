@@ -3,8 +3,9 @@ package Runner;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import Utility.PropertyFileHandler;
-import Utility.WebDriverHelper;
+import org.testng.annotations.BeforeClass;
+
+import Utility.propertyFileHandler;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
@@ -15,15 +16,13 @@ import io.cucumber.testng.CucumberOptions;
  *
  */
 
-@CucumberOptions(features="src/test/resources/Features", glue={"StepDefinitions"},plugin={"pretty","json:target/cucumber-json.json"})
+@CucumberOptions(features="src/test/resources/Feature", glue={"StepDefinitions"},plugin={"pretty","json:target/cucumber-json.json"})
 public class Runner extends AbstractTestNGCucumberTests{
 
+	@BeforeClass
 	public static void setup() throws FileNotFoundException, IOException {
-		PropertyFileHandler.getPropertyFileHandler();
-		PropertyFileHandler.loadPropertyFile("src/test/resources/TestData/data.properties");
-		
-		//WebDriverHelper.getWebDriverHelper();
-		
+		propertyFileHandler.getpropertyFile();
+		propertyFileHandler.loadPropertyFile("src/test/resources/data.properties");
 	}
 	
 }
