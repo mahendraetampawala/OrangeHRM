@@ -22,6 +22,12 @@ public class LoginLogoutFactory {
 	@FindBy(how =How.XPATH, using="//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")
 	public WebElement loginbutton;
 	
+	@FindBy(how = How.XPATH, using="//input[@class='oxd-input oxd-input--active oxd-input--error' and @placeholder='Username']")
+	public WebElement ErrorUsername;
+	
+	@FindBy(how = How.XPATH, using="//input[@class='oxd-input oxd-input--active oxd-input--error' and @placeholder='Password']")
+	public WebElement ErrorPassword;
+	
 	
 	
 }

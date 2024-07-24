@@ -3,6 +3,11 @@
  */
 package StepDefinitions;
 
+
+import static org.testng.Assert.assertEquals;
+
+import java.util.concurrent.TimeoutException;
+
 import PageFactory.LoginLogoutFactory;
 import PageObject.LoginLogoutPO;
 import Utility.WebDriverHelper;
@@ -27,24 +32,13 @@ public class LoginLogout {
 		System.out.println("This completed");
 	}
 	
-	@Given("User clicks on login button")
-	public void User_clicks_on_login_button() {
-		
-		WebDriverHelper.getWebDriverHelper().implicitwait();
+	@Given("Check whether username and password fields are highlighted")
+	public void Check_whether_username_and_password_fields_are_highlighted() throws InterruptedException {
+
 	   	System.out.println("inside the login click");
-		LoginLogoutPO.getnnewLoginPO().clickonLoginButton();
-	
-		
-		
-	}
 
+	   	assertEquals(LoginLogoutPO.getnnewLoginPO().clickonLoginButton(),true);
 
-
-	@Then("verifying the error messages")
-	public void verifying_the_error_messages() {
-	  
-	System.out.println("inside the verification method");
-		
 		
 	}
 

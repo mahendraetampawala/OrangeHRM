@@ -3,6 +3,8 @@
  */
 package PageObject;
 
+import java.util.concurrent.TimeoutException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -24,8 +26,19 @@ public class LoginLogoutPO {
 		return NewLoginLogoutpage;
 	}
 	
-	public void clickonLoginButton() {
+	public boolean clickonLoginButton() throws InterruptedException {
+		
+		WebDriverHelper.getWebDriverHelper().implicitwait();
 		LoginLogoutFactory.pf.loginbutton.click();
+		Thread.sleep(2000);
+	    LoginLogoutFactory.pf.ErrorUsername.isDisplayed();
+		
+		if( LoginLogoutFactory.pf.ErrorUsername.isDisplayed() && LoginLogoutFactory.pf.ErrorPassword.isDisplayed()) {
+			return true;
+		}
+		return false;
+		
+		
 	}
 	
 }
