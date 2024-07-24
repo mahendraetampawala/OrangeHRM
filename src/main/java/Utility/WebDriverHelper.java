@@ -49,6 +49,11 @@ public class WebDriverHelper {
 		driver.quit();
 	}
 
+	public void pageRefresh() {
+		 driver.navigate().refresh();
+	}
+	 
+	
 	public static WebDriver getDriver() {
 		return driver;
 	}

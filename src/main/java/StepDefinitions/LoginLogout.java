@@ -37,8 +37,29 @@ public class LoginLogout {
 
 	   	System.out.println("inside the login click");
 
-	   	assertEquals(LoginLogoutPO.getnnewLoginPO().clickonLoginButton(),true);
+	   	assertEquals(LoginLogoutPO.getnnewLoginPO().ValidateUsernameAndPwdFields(),true);
 
+	}
+	@Given("User enters the valid password as {string}")
+	public void User_enters_the_valid_password_as(String pwd) {
+		
+		WebDriverHelper.getWebDriverHelper().pageRefresh();
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		LoginLogoutPO.getnnewLoginPO().enterpassword(pwd);
+		
+	}
+	@Given("User clicks on the login button")
+	public void User_clicks_on_the_login_button() {
+		
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		LoginLogoutPO.getnnewLoginPO().loginButtonClick();
+		
+	}
+	@Then("Check whether the username field is highlighted")
+	public void Check_whether_the_username_field_is_highlighted() {
+		
+		
+		assertEquals(LoginLogoutPO.getnnewLoginPO().loginValidationWithEmptyUsername(),true);
 		
 	}
 

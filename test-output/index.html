@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\mahen\AppData\Local\Temp\testng-eclipse-613119085\testng-customsuite.xml</span>
+                    <span>C:\Users\mahen\AppData\Local\Temp\testng-eclipse-1576765725\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,6 +101,11 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.Runner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the login functionality with empty username field and valid password&quot;, &quot;Feature to test the ...)">runScenario("Verify the login functionality with empty username field and valid password", "Feature to test the ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="Runner.Runner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the login funtionality with empty fields of username and password&quot;, &quot;Feature to test the log...)">runScenario("Verify the login funtionality with empty fields of username and password", "Feature to test the log...)</a> <!-- method navigator-link -->
@@ -126,6 +131,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="runScenario(&quot;Verify the login functionality with empty username field and valid password&quot;, &quot;Feature to test the ...)">
+                  </a> <!-- runScenario("Verify the login functionality with empty username field and valid password", "Feature to test the ...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the login functionality with empty username field and valid password","Feature to test the login and logout functionality as an existing user")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="runScenario(&quot;Verify the login funtionality with empty fields of username and password&quot;, &quot;Feature to test the log...)">
                   </a> <!-- runScenario("Verify the login funtionality with empty fields of username and password", "Feature to test the log...) -->
                   <span class="method-name">runScenario</span>
@@ -139,7 +154,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\mahen\AppData\Local\Temp\testng-eclipse-613119085\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\mahen\AppData\Local\Temp\testng-eclipse-1576765725\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -196,16 +211,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'Runner.Runner')
-data.setCell(0, 3, 31997);
+data.setCell(0, 3, 17432);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'Runner.Runner')
+data.setCell(1, 3, 12928);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 30 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -233,20 +252,24 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">Runner.Runner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@4cb0a000)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@5017e1)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">225 ms</span>
+                <span class="method-start">267 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Verify the login funtionality with empty fields of username and password", "Feature to test the log...)</span>
-                <span class="method-start">246 ms</span>
+                <span class="method-start">289 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the login functionality with empty username field and valid password", "Feature to test the ...)</span>
+                <span class="method-start">13223 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">32248 ms</span>
+                <span class="method-start">30660 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

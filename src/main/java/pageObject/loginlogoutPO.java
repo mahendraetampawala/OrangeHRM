@@ -26,7 +26,7 @@ public class LoginLogoutPO {
 		return NewLoginLogoutpage;
 	}
 	
-	public boolean clickonLoginButton() throws InterruptedException {
+	public boolean ValidateUsernameAndPwdFields() throws InterruptedException {
 		
 		WebDriverHelper.getWebDriverHelper().implicitwait();
 		LoginLogoutFactory.pf.loginbutton.click();
@@ -39,6 +39,28 @@ public class LoginLogoutPO {
 		return false;
 		
 		
+	}
+	
+	public boolean loginValidationWithEmptyUsername() {
+		
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+
+		if(LoginLogoutFactory.pf.ErrorUsername.isDisplayed()) {
+			return true;
+		}
+		return false;
+		
+		
+	}
+	
+	public void loginButtonClick() {
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		LoginLogoutFactory.pf.loginbutton.click();
+	}
+	
+	public void enterpassword(String pwd) {
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		LoginLogoutFactory.pf.ErrorPassword.sendKeys(pwd);
 	}
 	
 }

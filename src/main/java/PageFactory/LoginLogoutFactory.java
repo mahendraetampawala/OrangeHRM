@@ -28,6 +28,8 @@ public class LoginLogoutFactory {
 	@FindBy(how = How.XPATH, using="//input[@class='oxd-input oxd-input--active oxd-input--error' and @placeholder='Password']")
 	public WebElement ErrorPassword;
 	
+	@FindBy(how=How.XPATH, using="//input[@placeholder='Password']")
+	public WebElement PasswordField;
 	
 	
 }
