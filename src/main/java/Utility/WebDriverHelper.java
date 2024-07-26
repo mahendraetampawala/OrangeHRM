@@ -7,6 +7,7 @@ import java.util.function.Function;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
@@ -38,17 +39,20 @@ public class WebDriverHelper {
 		driver=new ChromeDriver();
 		
 		driver.manage().window().maximize();
-		
 		return driver;
 	}
+	
 	
 	public void getURL(String URL) {
 		driver.get(URL);
 	}
-	public void closeDriver() {
+	public void quiteDriver() {
 		driver.quit();
 	}
 
+	public void closeDriver() {
+		driver.close();
+	}
 	public void pageRefresh() {
 		 driver.navigate().refresh();
 	}
@@ -81,6 +85,9 @@ public class WebDriverHelper {
 		 driver.switchTo().window(newTab.get(0));
 	 }
 	 
+	 public void newTab() {
+		 driver.switchTo().newWindow(WindowType.TAB);
+	 }
 	 /**
 		 * @author mahen
 		 * @description: this method use to wait till expected element is visible.

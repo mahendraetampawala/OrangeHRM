@@ -53,6 +53,16 @@ public class LoginLogoutPO {
 		
 	}
 	
+	public boolean loginValidationWithEmptyPassword() {
+		
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		if(LoginLogoutFactory.pf.ErrorPassword.isDisplayed()) {
+			return true;
+		}
+		return false;
+		
+	}
+	
 	public void loginButtonClick() {
 		WebDriverHelper.getWebDriverHelper().implicitwait();
 		LoginLogoutFactory.pf.loginbutton.click();
@@ -60,7 +70,23 @@ public class LoginLogoutPO {
 	
 	public void enterpassword(String pwd) {
 		WebDriverHelper.getWebDriverHelper().implicitwait();
-		LoginLogoutFactory.pf.ErrorPassword.sendKeys(pwd);
+		LoginLogoutFactory.pf.PasswordField.sendKeys(pwd);
 	}
 	
+	public void enterUsername(String username) {
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		LoginLogoutFactory.pf.usernameField.sendKeys(username);
+	}
+	
+	public boolean verifyLoginErrorMessage(String loginErrorMsg) {
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		String error=LoginLogoutFactory.pf.LoginErrorMessage.getAttribute("value");
+		if(LoginLogoutFactory.pf.LoginErrorMessage.getAttribute("value")==loginErrorMsg) {
+			System.out.println(error);
+			return true;
+		}
+		return false;
+	}
+	
+	 
 }

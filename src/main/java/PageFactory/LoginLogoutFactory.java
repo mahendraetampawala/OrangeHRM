@@ -31,5 +31,10 @@ public class LoginLogoutFactory {
 	@FindBy(how=How.XPATH, using="//input[@placeholder='Password']")
 	public WebElement PasswordField;
 	
+	@FindBy(how=How.XPATH, using="//input[@placeholder='Username']")
+	public WebElement usernameField;
+	
+	@FindBy(how=How.XPATH, using="//p[@class='oxd-text oxd-text--p oxd-alert-content-text' and text()='Invalid credentials']")
+	public WebElement LoginErrorMessage;
 	
 }
