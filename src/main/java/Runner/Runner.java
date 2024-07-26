@@ -26,7 +26,7 @@ public class Runner extends AbstractTestNGCucumberTests{
 		propertyFileHandler.getpropertyFile();
 		propertyFileHandler.loadPropertyFile("src/test/resources/data.properties");
 		WebDriverHelper.getWebDriverHelper();
-		WebDriverHelper.getWebDriverHelper().webdriverInitilizer();
+		WebDriverHelper.getWebDriverHelper().webdriverInitilizer(propertyFileHandler.readProperty("Browser"),propertyFileHandler.readProperty("OS"));
 	}
 	@AfterClass
 	public static void teaDown() {

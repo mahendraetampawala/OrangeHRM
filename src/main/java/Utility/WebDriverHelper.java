@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class WebDriverHelper {
 	
-	 static WebDriver driver;
+	static WebDriver driver;
 	static WebDriverHelper helper;
 	
 	public static WebDriverHelper getWebDriverHelper() {
@@ -32,13 +32,28 @@ public class WebDriverHelper {
 	private WebDriverHelper() {
 		
 	}
-	public WebDriver webdriverInitilizer() {
+	public WebDriver webdriverInitilizer(String Browser, String Os) {
 		
-		System.setProperty("Webdriver.chrome.driver","src/test/resources/Driver/chromedriver.exe");
+		System.out.println("Starting up the Web Driver Initialization method");
 		
-		driver=new ChromeDriver();
+		if(Os.equals("Windows")) {
+			if(Browser.equals("Chrome")) {
+				System.setProperty("Webdriver.chrome.driver","src/test/resources/Driver/chromedriver.exe");
+				driver=new ChromeDriver();
+			}
+		}else if(Os.equals("Mac")) {
+			if(Browser.equals("Chrome")) {
+				System.setProperty("Webdriver.chrome.driver","src/test/resources/Driver/chromedriver.exe");
+				driver=new ChromeDriver();
+			}
+		}
+		
+		
+	
+		
 		
 		driver.manage().window().maximize();
+		implicitwait();
 		return driver;
 	}
 	

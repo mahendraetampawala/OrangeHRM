@@ -37,4 +37,7 @@ public class LoginLogoutFactory {
 	@FindBy(how=How.XPATH, using="//p[@class='oxd-text oxd-text--p oxd-alert-content-text' and text()='Invalid credentials']")
 	public WebElement LoginErrorMessage;
 	
+	@FindBy(how=How.XPATH,using="//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
+	public WebElement DashboardModuleIcone;
+	
 }

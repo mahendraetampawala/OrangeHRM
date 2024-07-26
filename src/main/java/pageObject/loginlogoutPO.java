@@ -88,5 +88,14 @@ public class LoginLogoutPO {
 		return false;
 	}
 	
+	public boolean loginValidation() {
+		WebDriverHelper.getWebDriverHelper().waitForPageLoad();
+		
+		if(LoginLogoutFactory.pf.DashboardModuleIcone.isDisplayed()) {
+			return true;
+		}
+		return false;
+	}
+	
 	 
 }

@@ -50,7 +50,7 @@ public class LoginLogout {
 	   	System.out.println("inside the login click");
 
 	   	assertEquals(LoginLogoutPO.getnnewLoginPO().ValidateUsernameAndPwdFields(),true);
-	   	//WebDriverHelper.getWebDriverHelper().closeDriver();
+	   
 
 	}
 	
@@ -136,5 +136,27 @@ public class LoginLogout {
 		LoginLogoutPO.getnnewLoginPO().verifyLoginErrorMessage(errorMsg);
 	 	
 	}
+	
+	@And("User enters a valid username as {string}")
+		public void User_enters_a_valid_username_as(String username) {
+		LoginLogoutPO.getnnewLoginPO().enterUsername(username);
+	}
 
+	@Given("enters a valid password as {string}")
+	public void enters_a_valid_password_as(String password) {
+		LoginLogoutPO.getnnewLoginPO().enterpassword(password);
+	}
+	
+	@When("Clicks on the login button")
+	public void Clicks_on_the_login_button() {
+		LoginLogoutPO.getnnewLoginPO().loginButtonClick();
+	}
+	
+	@Then("Verifying whether the login is successful")
+	public void Verifying_whether_the_login_is_successful() {
+		LoginLogoutPO.getnnewLoginPO().loginValidation();
+	}
+	
+	
+	
 }

@@ -24,3 +24,9 @@ Feature: Feature to test the login and logout functionality as an existing user
     And User enters a valid password as "Password"
     When User clicks the login button
     Then Verify the error message as "Login_Error_Message"
+ @FullPhase
+  Scenario: Verify the login functinality with valid username and valid password
+  	  And User enters a valid username as "Username"
+  	  And enters a valid password as "Password"
+  	  When Clicks on the login button
+  	  Then Verifying whether the login is successful
