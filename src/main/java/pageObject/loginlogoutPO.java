@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import PageFactory.LoginLogoutFactory;
 import Utility.WebDriverHelper;
+import Utility.propertyFileHandler;
 
 /**
  * @author mahen
@@ -68,20 +69,33 @@ public class LoginLogoutPO {
 		LoginLogoutFactory.pf.loginbutton.click();
 	}
 	
-	public void enterpassword(String pwd) {
+	public void enterpassword(String Password) {
 		WebDriverHelper.getWebDriverHelper().implicitwait();
-		LoginLogoutFactory.pf.PasswordField.sendKeys(pwd);
+		LoginLogoutFactory.pf.PasswordField.sendKeys(propertyFileHandler.readProperty(Password));
+		System.out.println("The Valid Password is" +Password);
 	}
 	
-	public void enterUsername(String username) {
+	public void enterUsername(String Username) {
 		WebDriverHelper.getWebDriverHelper().implicitwait();
-		LoginLogoutFactory.pf.usernameField.sendKeys(username);
+		LoginLogoutFactory.pf.usernameField.sendKeys(propertyFileHandler.readProperty(Username));
+		System.out.println("The Valid username is "+Username);
 	}
+	
+	public void enteranInvalidUsername(String InvalidUsername) {
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		LoginLogoutFactory.pf.usernameField.sendKeys(propertyFileHandler.readProperty(InvalidUsername));
+	}
+	
+	public void enterInvalidPassowrd(String InvalidPassword) {
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		LoginLogoutFactory.pf.PasswordField.sendKeys(propertyFileHandler.readProperty(InvalidPassword));
+	}
+	
 	
 	public boolean verifyLoginErrorMessage(String loginErrorMsg) {
 		WebDriverHelper.getWebDriverHelper().implicitwait();
 		String error=LoginLogoutFactory.pf.LoginErrorMessage.getAttribute("value");
-		if(LoginLogoutFactory.pf.LoginErrorMessage.getAttribute("value")==loginErrorMsg) {
+		if(LoginLogoutFactory.pf.LoginErrorMessage.getAttribute("value")==propertyFileHandler.readProperty(loginErrorMsg)) {
 			System.out.println(error);
 			return true;
 		}
