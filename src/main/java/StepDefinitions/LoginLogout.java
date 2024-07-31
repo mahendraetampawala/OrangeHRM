@@ -139,6 +139,7 @@ public class LoginLogout {
 	
 	@And("User enters a valid username as {string}")
 		public void User_enters_a_valid_username_as(String username) {
+		WebDriverHelper.getWebDriverHelper().waitForPageLoad();
 		LoginLogoutPO.getnnewLoginPO().enterUsername(username);
 	}
 

@@ -3,6 +3,10 @@
  */
 package StepDefinitions;
 
+import static org.testng.Assert.assertEquals;
+
+import PageObject.LoginLogoutPO;
+import PageObject.UserManagementPO;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,12 +19,13 @@ public class UserManagement {
 	
 	@And("user clicks on the admin")
 	public void user_clicks_on_the_admin() {
-		
+		UserManagementPO.getUserManagement().AdminButtonClick();
 	}
 	
 	@And("verify whether the user directed to the admin user management section")
 	public void verify_whether_the_user_directed_to_the_admin_user_management_section() {
 		
+		assertEquals(UserManagementPO.getUserManagement().verificationOfDirectionToUserManagement(),true);
 	}
 
 	@And("user enters the username as {string}")

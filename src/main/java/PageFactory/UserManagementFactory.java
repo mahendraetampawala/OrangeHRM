@@ -32,10 +32,10 @@ public class UserManagementFactory {
 	@FindBy(how=How.XPATH,using="//input[@placeholder='Type for hints...']")
 	public WebElement EmployeeNameTxt;
 	
-	@FindBy(how=How.XPATH,using="(//div[@class='oxd-select-text oxd-select-text--active'])[1]")//Indexing - Used when there are elements with same contents
+	@FindBy(how=How.XPATH,using="(//div[@class='oxd-select-text-input'])[1]")//Indexing - Used when there are elements with same contents
 	public WebElement UserRole;
 	
-	@FindBy(how=How.XPATH,using="(//div[@class='oxd-select-text oxd-select-text--active'])[2]")//Indexing - Used when there are elements with same contents
+	@FindBy(how=How.XPATH,using="(//div[@class='oxd-select-text-input'])[2]")//Indexing - Used when there are elements with same contents
 	public WebElement Status;
 	
 	@FindBy(how=How.XPATH,using="//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
@@ -43,6 +43,9 @@ public class UserManagementFactory {
 	
 	@FindBy(how=How.XPATH,using="//button[@class='oxd-button oxd-button--medium oxd-button--ghost']")
 	public WebElement ResetBtn;
+	
+	@FindBy(how=How.XPATH,using="//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-level']")
+	public WebElement AdminSectionName;
 	
 	
 	/*---------------------------------------------   User Adding -------------------------------------------------------   */

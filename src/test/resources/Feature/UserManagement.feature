@@ -3,13 +3,13 @@ Feature: Feature to test admin user management functionalities
 
   Background: 
     Given Directing to the "URL"
-    And User enters a valid username as "Username"
-    And enters a valid password as "Password"
-    When Clicks on the login button
+    #And User enters a valid username as "Username"
+    #And enters a valid password as "Password"
+   # When Clicks on the login button
     Then Verifying whether the login is successful
     And user clicks on the admin
     And verify whether the user directed to the admin user management section
-
+	@FullPhase
   Scenario: Verify the functionality of user search
     And user enters the username as "Username"
     And user selects the user role as "User_role"
