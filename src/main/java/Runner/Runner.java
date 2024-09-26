@@ -36,11 +36,11 @@ public class Runner extends AbstractTestNGCucumberTests{
 		
 	
 		
-		if(WebDriverHelper.getWebDriverHelper()!=null) {
+	/*	if(WebDriverHelper.getWebDriverHelper()!=null) {
 			WebDriverHelper.getWebDriverHelper().quiteDriver();
 			
 		
-		}
+		}*/
 	}
 	
 }

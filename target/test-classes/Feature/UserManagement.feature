@@ -11,9 +11,9 @@ Feature: Feature to test admin user management functionalities
     And verify whether the user directed to the admin user management section
 	@FullPhase
   Scenario: Verify the functionality of user search
-    And user enters the username as "Username"
-    And user selects the user role as "User_role"
-    And user enters the emaployee name as "Employee_Name"
+    And user enters the username as "user_"
+    And user selects the user role as "user_role_"
+    Then user enter the emaployee name as "Employee_Name"
     And user selects the status as "Status"
     When user clicks on the search button
     Then Verify whether relavent search details are listed in the table

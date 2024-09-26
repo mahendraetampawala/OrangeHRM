@@ -26,14 +26,25 @@ public class UserManagementFactory {
 	@FindBy(how=How.XPATH, using="//i[@class='oxd-icon bi-caret-up-fill']")
 	public WebElement searchExpand;
 	
-	@FindBy(how=How.XPATH, using="//div[@class='' and input[@class='oxd-input oxd-input--active']]")
+	@FindBy(how=How.XPATH, using="(//input[@class='oxd-input oxd-input--active'])[2]")
 	public WebElement UsernameTxt;
+	
+	// (//input[@class='oxd-input oxd-input--active'])[2]
+	// //div[@class='' and input[@class='oxd-input oxd-input--active']]
 	
 	@FindBy(how=How.XPATH,using="//input[@placeholder='Type for hints...']")
 	public WebElement EmployeeNameTxt;
 	
+	
+	
+	
 	@FindBy(how=How.XPATH,using="(//div[@class='oxd-select-text-input'])[1]")//Indexing - Used when there are elements with same contents
 	public WebElement UserRole;
+	
+	
+	@FindBy(how=How.XPATH,using="//div[@role='option' and span[text()='Admin']]")
+	public WebElement setUserRole;
+	
 	
 	@FindBy(how=How.XPATH,using="(//div[@class='oxd-select-text-input'])[2]")//Indexing - Used when there are elements with same contents
 	public WebElement Status;
