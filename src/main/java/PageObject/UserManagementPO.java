@@ -3,6 +3,8 @@
  */
 package PageObject;
 
+import org.testng.Assert;
+
 import PageFactory.UserManagementFactory;
 import Utility.WebDriverHelper;
 import Utility.propertyFileHandler;
@@ -71,6 +73,33 @@ public class UserManagementPO {
 	
 	public void SetEmployeeName(String EmployeeName) {
 		UserManagementFactory.UMF.EmployeeNameTxt.sendKeys(propertyFileHandler.readProperty(EmployeeName));
+	}
+	
+	/*-----------------------Adding Users--------------------------------------*/
+	
+	public void ClickOnAddButton() {
+		UserManagementFactory.UMF.AddButton.click();
+	}
+	
+	public boolean VerificationOfAddUserPage() {
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		
+		try {
+			if(UserManagementFactory.UMF.AddUserText.isDisplayed()) {
+				return true;
+			}
+		}catch(Exception verificationFaild) {
+			System.out.println("User is not directed to the 'Add User' page");
+		}
+		return false;
+		
+	}
+	
+	public void selectUserRole() {
+		
+		UserManagementFactory.UMF.AddUserRole.click();
+		WebDriverHelper.getWebDriverHelper().implicitwait();
+		UserManagementFactory.UMF.UserRoleAdmin.click();
 	}
 	
 	

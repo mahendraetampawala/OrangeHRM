@@ -61,7 +61,16 @@ public class UserManagementFactory {
 	
 	/*---------------------------------------------   User Adding -------------------------------------------------------   */
 	
+	@FindBy(how=How.XPATH, using="//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+	public WebElement AddButton;
 	
+	@FindBy(how=How.XPATH,using="//h6[text()='Add User']")
+	public WebElement AddUserText;
 	
+	@FindBy(how=How.XPATH, using="(//div[@class='oxd-select-text-input'])[1]")
+	public WebElement AddUserRole;
+	
+	@FindBy(how=How.XPATH,using="//div[@class='oxd-select-option' and span[text()='Admin']]")
+	public WebElement UserRoleAdmin;
 	
 }

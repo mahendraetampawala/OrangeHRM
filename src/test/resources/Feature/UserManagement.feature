@@ -5,14 +5,29 @@ Feature: Feature to test admin user management functionalities
     Given Directing to the "URL"
     #And User enters a valid username as "Username"
     #And enters a valid password as "Password"
-   # When Clicks on the login button
+    # When Clicks on the login button
     Then Verifying whether the login is successful
     And user clicks on the admin
     And verify whether the user directed to the admin user management section
+
 	@FullPhase
+  Scenario: Verifying the functionality of adding users
+    And User clicks on Add
+    Then Verify user is on SaveSystemUser page
+    And User selects the user role
+    And User selects the status
+    And User enters the employee name
+    And User enters the username
+    Then User enters the passowrd
+    And User confirms the password
+    When User clicks on the save button
+    Then Verification of successfully adding the user
+
+  #///////////////////////////////////////////////////////////////////////
+  @FullPhase
   Scenario: Verify the functionality of user search
     And user enters the username as "user_"
-    And user selects the user role as "user_role_"
+    And The user selects the user role as "user_role_"
     Then user enter the emaployee name as "Employee_Name"
     And user selects the status as "Status"
     When user clicks on the search button

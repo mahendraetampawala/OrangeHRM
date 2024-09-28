@@ -5,6 +5,9 @@ package StepDefinitions;
 
 import static org.testng.Assert.assertEquals;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import PageObject.LoginLogoutPO;
 import PageObject.UserManagementPO;
 import io.cucumber.java.en.And;
@@ -35,8 +38,8 @@ public class UserManagement {
 		UserManagementPO.getUserManagement().EnterUsername(Username);
 	}
 	
-	@And("user selects the user role as {string}")
-	public void user_selects_the_user_role_as(String UserRole) {
+	@And("The user selects the user role as {string}")
+	public void The_user_selects_the_user_role_as(String UserRole) {
 		UserManagementPO.getUserManagement().selectUserRole(UserRole);
 	}
 	
@@ -66,5 +69,70 @@ public class UserManagement {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
+	
+	
+	
+	/*-----------------------------------------------------------------------------------------------*/
+	
+	@Test(priority=1)
+	@Then("User clicks on Add")
+	public void user_clicks_on_add() {
+	    UserManagementPO.getUserManagement().ClickOnAddButton();
+	}
+	@Test(priority=2)
+	@Then("Verify user is on SaveSystemUser page")
+	public void verify_user_is_on_save_system_user_page() {
+	    Assert.assertEquals(UserManagementPO.getUserManagement().VerificationOfAddUserPage(), true);
+	    System.out.println("Verification passed");
+	}
+	@Test(priority=3)
+	@Then("User selects the user role")
+	public void user_selects_the_user_role() {
+	    UserManagementPO.getUserManagement().selectUserRole();
+	}
+	@Test(priority=4)
+	@Then("User selects the status")
+	public void user_selects_the_status() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Test(priority=5)
+	@Then("User enters the employee name")
+	public void user_enters_the_employee_name() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Test(priority=6)
+	@Then("User enters the username")
+	public void user_enters_the_username() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Test(priority=7)
+	@Then("User enters the passowrd")
+	public void user_enters_the_passowrd() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Test(priority=8)
+	@Then("User confirms the password")
+	public void user_confirms_the_password() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Test(priority=9)
+	@When("User clicks on the save button")
+	public void user_clicks_on_the_save_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Test(priority=10)
+	@Then("Verification of successfully adding the user")
+	public void verification_of_successfully_adding_the_user() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	
 
 }
