@@ -1,10 +1,14 @@
 package Utility;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.function.Function;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
@@ -12,6 +16,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.io.Files;
 
 /**
  * @author mahen
@@ -135,6 +141,14 @@ public class WebDriverHelper {
 		                .equals("complete");
 		        }
 		    });
+	 }
+	 
+	 public void takescreenshot(String reason) throws IOException {
+		 
+	
+		 
+		 File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		 Files.copy(f, new File("src/test/resources/Screenshots/"+reason+".jpg"));
 	 }
 
 	

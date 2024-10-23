@@ -3,6 +3,8 @@
  */
 package PageObject;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 
 import PageFactory.UserManagementFactory;
@@ -62,17 +64,26 @@ public class UserManagementPO {
 		
 	}
 	
-	public void selectUserRole(String user_role) {
+	public void selectUserRole(String user_role) throws IOException {
 		//WebDriverHelper.getWebDriverHelper().waitPageLoad(U);
-		WebDriverHelper.getWebDriverHelper().implicitwait();
+		try{WebDriverHelper.getWebDriverHelper().implicitwait();
 		UserManagementFactory.UMF.UserRole.click();
 		WebDriverHelper.getWebDriverHelper().waitForPageLoad();
-		UserManagementFactory.UMF.setUserRole.click();
+		UserManagementFactory.UMF.setUserRole.click();}
+		catch(Exception FailedToSelectUserRole) {
+			WebDriverHelper.getWebDriverHelper().takescreenshot(user_role);
+		}
 		//UserManagementFactory.UMF.UserRole.sendKeys(user_role);
 	}
 	
-	public void SetEmployeeName(String EmployeeName) {
-		UserManagementFactory.UMF.EmployeeNameTxt.sendKeys(propertyFileHandler.readProperty(EmployeeName));
+	public void SetEmployeeName(String EmployeeName) throws IOException {
+		
+		try{UserManagementFactory.UMF.EmployeeNameTxt.sendKeys(propertyFileHandler.readProperty(EmployeeName));
+		}catch(Exception FailedToEnter) {
+			
+			WebDriverHelper.getWebDriverHelper().takescreenshot(EmployeeName);
+		}
+		
 	}
 	
 	/*-----------------------Adding Users--------------------------------------*/

@@ -5,6 +5,8 @@ package StepDefinitions;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -39,13 +41,13 @@ public class UserManagement {
 	}
 	
 	@And("The user selects the user role as {string}")
-	public void The_user_selects_the_user_role_as(String UserRole) {
+	public void The_user_selects_the_user_role_as(String UserRole) throws IOException {
 		UserManagementPO.getUserManagement().selectUserRole(UserRole);
 	}
 	
 	
 	@Then("user enter the emaployee name as {string}")
-	public void user_enter_the_emaployee_name_as(String EmployeeName) {
+	public void user_enter_the_emaployee_name_as(String EmployeeName) throws IOException {
 	    // Write code here that turns the phrase above into concrete actions
 		
 		System.out.println("Inside the 'enter employee name method'");
